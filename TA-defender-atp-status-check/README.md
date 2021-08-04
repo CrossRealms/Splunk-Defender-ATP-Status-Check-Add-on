@@ -6,7 +6,7 @@ TODO
 
 OVERVIEW
 --------
-The Microsoft Windows Defender Status Check Add-on for Splunk is a Splunk App that allows users to check Defender ATP configuration status check on windows machines. It uses registry to find the configuration status. The Add-on does not contain any dashboard or savedsearches.
+The Microsoft Windows Defender Status Check Add-on for Splunk is a Splunk App that allows users to check Defender ATP configuration status check on windows machines. It uses registry to find the configuration status for Defender ATP Configuration on the machine. The Add-on does not contain any dashboard or savedsearches.
 
 
 * Author - CrossRealms International Inc.
@@ -51,10 +51,10 @@ DATA COLLECTION & CONFIGURATION
 ### Enable Data Inputs ###
 * Add below stanzas in the `TA-defender-atp-status-check/local/inputs.conf` file and deploy to all required Windows hosts.
 ```
-[powershell://generate_defender_atp_logs]
+[powershell://generate_defender_atp_status_logs]
 disabled = 0
 
-[monitor://$SPLUNK_HOME\var\log\windows_custom_powershell_scripts\DefenderATPStatus.log]
+[monitor://$SPLUNK_HOME\var\log\TA-defender-atp-status-check\DefenderATPStatus.log]
 disabled = 0
 ```
 

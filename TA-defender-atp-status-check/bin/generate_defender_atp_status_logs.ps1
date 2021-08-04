@@ -1,7 +1,7 @@
 ## This script generates DefenderATPStatus.Log, useful to check whether DefenderATP is installed on the system or not.
 
-Set-Variable -Name "LogFolder" -Value "$SplunkHome\var\log\windows_custom_powershell_scripts"
-Set-Variable -Name "LogFile" -Value "$SplunkHome\var\log\windows_custom_powershell_scripts\DefenderATPStatus.log"
+Set-Variable -Name "LogFolder" -Value "$SplunkHome\var\log\TA-defender-atp-status-check"
+Set-Variable -Name "LogFile" -Value "$SplunkHome\var\log\TA-defender-atp-status-check\DefenderATPStatus.log"
 
 
 if (!(Test-Path -Path $LogFolder )) {

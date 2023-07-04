@@ -35,7 +35,7 @@ if (Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Statu
         $OnboardingState = Get-RegistryValue -Path "HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Status" -Value OnboardingState
 
         if ($OnboardingState -eq "NotFound"){
-            "The defender ATP is not installed." | Out-File -encoding utf8 "$LogFile"
+            Write-Output "The defender ATP is not installed.";
         }
         else{
             $LastConnected = " "
@@ -48,15 +48,15 @@ if (Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Statu
                 $LastConnected = " "
             }
 
-            "The defender ATP is installed. OnboardingState=" + $OnboardingState + ", LastConnected=" + $LastConnected | Out-File -encoding utf8 "$LogFile"
+            Write-Output "The defender ATP is installed. OnboardingState=" + $OnboardingState + ", LastConnected=" + $LastConnected ;
         }
     }
     catch{
-        "The defender ATP is not installed." | Out-File -encoding utf8 "$LogFile"
+        Write-Output "The defender ATP is not installed.";
     }
 }
 else{
-    "The defender ATP is not installed." | Out-File -encoding utf8 "$LogFile"
+    Write-Output "The defender ATP is not installed.";
 }
 
 exit

@@ -22,44 +22,9 @@ jobs:
     runs-on: "ubuntu-latest"
     
     steps:
-      # ...
-      - name: "Generate Add-on Build"
-        run: |
-          echo "Started generating builds."
-      
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-      
-      - uses: actions/checkout@v2
+      - uses: VatsalJagani/splunk-app-action@v1
         with:
-          ref: ${{ steps.extract_branch.outputs.branch }}
-          path: repodir
-            
-      - name: "Generate Add-on Build"
-        run: |
-          cd repodir
-          find TA-defender-atp-status-check -type f -exec chmod 644 '{}' \;
-          find TA-defender-atp-status-check -type d -exec chmod 755 '{}' \;
-          tar -czf TA-defender-atp-status-check.tgz TA-defender-atp-status-check
-          cd ..
-          
-      - uses: actions/upload-artifact@v2
-        with:
-          name: "build"
-          path: |
-            repodir/TA-defender-atp-status-check.tgz
-      
-      - uses: splunk/appinspect-cli-action@v1
-        if: always()
-        with:
-          app_path: 'repodir/TA-defender-atp-status-check.tgz'
-          result_file: 'repodir/ta-appinspect-mode-test.json'
-          
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: "app_inspect_reports"
-          path: |
-            repodir/ta-appinspect-mode-test.json
+          app_dir: "TA-defender-atp-status-check"
+          app_build_name: "TA-defender-atp-status-check"
+          splunkbase_username: ${{ secrets.SPLUNKBASE_USERNAME }}
+          splunkbase_password: ${{ secrets.SPLUNKBASE_PASSWORD }}

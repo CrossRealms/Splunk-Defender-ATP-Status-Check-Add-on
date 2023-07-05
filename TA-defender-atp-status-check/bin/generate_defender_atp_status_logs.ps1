@@ -1,12 +1,4 @@
-## This script generates DefenderATPStatus.Log, useful to check whether DefenderATP is installed on the system or not.
-
-Set-Variable -Name "LogFolder" -Value "$SplunkHome\var\log\TA-defender-atp-status-check"
-Set-Variable -Name "LogFile" -Value "$SplunkHome\var\log\TA-defender-atp-status-check\DefenderATPStatus.log"
-
-
-if (!(Test-Path -Path $LogFolder )) {
-    New-Item -ItemType directory -Path $LogFolder
-}
+## This script generates DefenderATPStatus Logs, useful to check whether DefenderATP is installed on the system or not.
 
 
 # Checks if the registry value is present or not
@@ -35,7 +27,7 @@ if (Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Statu
         $OnboardingState = Get-RegistryValue -Path "HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Status" -Value OnboardingState
 
         if ($OnboardingState -eq "NotFound"){
-            "The defender ATP is not installed." | Out-File -encoding utf8 "$LogFile"
+            Write-Output "The defender ATP is not installed.";
         }
         else{
             $LastConnected = " "
@@ -48,15 +40,15 @@ if (Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Statu
                 $LastConnected = " "
             }
 
-            "The defender ATP is installed. OnboardingState=" + $OnboardingState + ", LastConnected=" + $LastConnected | Out-File -encoding utf8 "$LogFile"
+            Write-Output "The defender ATP is installed. OnboardingState=" + $OnboardingState + ", LastConnected=" + $LastConnected ;
         }
     }
     catch{
-        "The defender ATP is not installed." | Out-File -encoding utf8 "$LogFile"
+        Write-Output "The defender ATP is not installed.";
     }
 }
 else{
-    "The defender ATP is not installed." | Out-File -encoding utf8 "$LogFile"
+    Write-Output "The defender ATP is not installed.";
 }
 
 exit

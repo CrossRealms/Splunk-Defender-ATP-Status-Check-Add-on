@@ -12,11 +12,9 @@ Install the Cyences App for Splunk (https://splunkbase.splunk.com/app/5351/) to 
 
 
 * Author - CrossRealms International Inc.
-* Version - 1.0.0
-* Build - 1
 * Creates Index - False
 * Compatible with:
-   * Splunk Enterprise version: 8.2, 8.1, 8.0, 7.3, 7.2, 7.1
+   * Splunk Enterprise version: 9.0.x, 8.2.x
    * OS: Platform Independent
    * Browser: Does not have UI.
 
@@ -55,8 +53,6 @@ DATA COLLECTION & CONFIGURATION
 [powershell://generate_defender_atp_status_logs]
 disabled = 0
 
-[monitor://$SPLUNK_HOME\var\log\TA-defender-atp-status-check\DefenderATPStatus.log]
-disabled = 0
 ```
 
 
@@ -71,6 +67,9 @@ UNINSTALL ADD-ON
 
 RELEASE NOTES
 -------------
+Version 1.1.0 (Jul 2023)
+* Updated the event ingestion method in order to fix the issue.
+
 Version 1.0.0 (Aug 2021)
 * Created Add-on with Powershell script and inputs.conf.
 
@@ -86,6 +85,7 @@ CONTRIBUTORS
 * Vatsal Jagani
 * Bhavik Bhalodia
 * Ahad Ghani
+* Hardik Dholariya
 
 
 
@@ -94,4 +94,4 @@ SUPPORT
 * Contact - CrossRealms International Inc.
   * US: +1-312-2784445
 * License Agreement - https://d38o4gzaohghws.cloudfront.net/static/misc/eula.html
-* Copyright - Copyright CrossRealms Internationals, 2021
+* Copyright - Copyright CrossRealms Internationals, 2023

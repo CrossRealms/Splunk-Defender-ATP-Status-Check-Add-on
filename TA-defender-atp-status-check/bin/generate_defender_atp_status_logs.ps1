@@ -40,7 +40,7 @@ if (Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows Advanced Threat Protection\Statu
                 $LastConnected = " "
             }
 
-            Write-Output "The defender ATP is installed. OnboardingState=" + $OnboardingState + ", LastConnected=" + $LastConnected ;
+            Write-Output ( "The defender ATP is installed. OnboardingState=" + $OnboardingState + ", LastConnected=" + $LastConnected ) ;
         }
     }
     catch{

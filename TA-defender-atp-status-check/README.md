@@ -26,9 +26,9 @@ There are two ways to setup this app:
   1. Standalone Mode: 
      * Install the `Defender ATP Status Check Add-on`.
   2. Distributed Mode:
-     * The Add-on is not required on search head.
-     * Install the `Defender ATP Status Check Add-on` on the universal forwarders on Windows and configure it.
-     * Install the Add-on on a heavy forwarder. Otherwise, install it on an indexer. Input configuration is not required for both indexers and heavy forwarders.
+     * The Add-on is required on the Search Head for field extraction. Input configuration is not required on the Search Head.
+     * Install the `Defender ATP Status Check Add-on` on the universal forwarders on Windows and configure it. (You can do it from the Deployment Server.)
+     * Install the Add-on on a heavy forwarder if forwarders are sending data to Heavy Forwarder, otherwise install it on Indexers for data parsing. Input configuration is not required for both indexers and heavy forwarders.
 
 
 DEPENDENCIES

@@ -71,6 +71,9 @@ UNINSTALL ADD-ON
 
 RELEASE NOTES
 -------------
+Version 1.1.1 (Aug 2024)
+* Fixed event format issue.
+
 Version 1.1.0 (Jul 2023)
 * Events are now being ingested directly via Powershell script, with no file monitoring being used anymore.
 

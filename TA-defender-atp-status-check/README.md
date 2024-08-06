@@ -13,7 +13,6 @@ Install the Cyences App for Splunk (https://splunkbase.splunk.com/app/5351/) to 
 * Author - CrossRealms International Inc.
 * Creates Index - False
 * Compatible with:
-   * Splunk Enterprise version: 9.0.x, 8.2.x
    * OS: Platform Independent
    * Browser: Does not have UI.
 
@@ -71,6 +70,9 @@ UNINSTALL ADD-ON
 
 RELEASE NOTES
 -------------
+Version 1.1.1 (Aug 2024)
+* Fixed event format issue.
+
 Version 1.1.0 (Jul 2023)
 * Events are now being ingested directly via Powershell script, with no file monitoring being used anymore.
 
@@ -98,4 +100,4 @@ SUPPORT
 * Contact - CrossRealms International Inc.
   * US: +1-312-2784445
 * License Agreement - https://d38o4gzaohghws.cloudfront.net/static/misc/eula.html
-* Copyright - Copyright CrossRealms Internationals, 2023
+* Copyright - Copyright CrossRealms Internationals, 2024

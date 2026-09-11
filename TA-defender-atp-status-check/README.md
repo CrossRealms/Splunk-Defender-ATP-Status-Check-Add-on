@@ -70,6 +70,9 @@ UNINSTALL ADD-ON
 
 RELEASE NOTES
 -------------
+Version 1.1.2 (Sep 2026)
+* Copyright and doc improvements.
+
 Version 1.1.1 (Aug 2024)
 * Fixed event format issue.
 
@@ -100,4 +103,4 @@ SUPPORT
 * Contact - CrossRealms International Inc.
   * US: +1-312-2784445
 * License Agreement - https://d38o4gzaohghws.cloudfront.net/static/misc/eula.html
-* Copyright - Copyright CrossRealms Internationals, 2024
+* Copyright - Copyright CrossRealms Internationals, 2026

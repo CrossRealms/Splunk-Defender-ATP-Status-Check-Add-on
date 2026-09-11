@@ -71,7 +71,7 @@ UNINSTALL ADD-ON
 RELEASE NOTES
 -------------
 Version 1.1.2 (Sep 2026)
-* Copyright and doc improvements.
+* Copyright and version change.
 
 Version 1.1.1 (Aug 2024)
 * Fixed event format issue.
